@@ -1,34 +1,31 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
 
-h1{
-  text-align: center;
-}
-
-nav{
+nav {
+  background-color: #333;
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
 }
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 40px 0;
+  color: #333;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+
 
 a{
   color: #000;
@@ -36,29 +33,70 @@ a{
   margin: 5px;
   cursor: pointer;
 }
+
 a:hover{
   color: rgb(136, 136, 136);
 } 
 
-footer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+
+.card-container {
+  margin: auto;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
+.card-container > h2 {
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  margin-bottom: 15px;
 }
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+
+.card-info {
+  display: flex;
+}
+
+.card-info-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.links {
+  font-size: 19px;
+  margin-right: 5px;
+}
+
+.back-btn {
+  text-align: center;
+  margin: 15px;
+}
+
+.back-btn > button {
+  background-color: #6B7D7D;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px
+}
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.contactDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.contactDescription > h2 {
+  font-family: Montserrat, sans-serif;
 }
 
 form{
@@ -67,22 +105,58 @@ form{
   justify-content: space-around;
   width: 300px;
   height: 100px;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+form > input {
+  border: 1px solid #6B7D7D;
+  border-radius: 5px;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+form > button {
+  background-color: #6B7D7D;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 5px;
 }
+
+.error {
+  text-align: center;
+  position: relative;
+  top: 30px;
+  color: red;
+  font-weight: bold;
+}
+
+.confirm {
+  text-align: center;
+  position: relative;
+  top: 30px;
+  font-weight: bold;
+}
+
+
+.card {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.dentist-name {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+
 
 .card-grid{
   display: flex;
@@ -92,31 +166,159 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  min-height: 50vh;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+.favButton {
+  margin-top: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.2s;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.favs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.favs > h2 {
+  font-family: Montserrat, sans-serif;
 }
 
-.dark{
-  background-color: #12121296;
+.btn-theme {
+  background-color: #6B7D7D;
+  font-size: 20px;
+  border: none;
+  padding: 2px 8px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.removeAll-btn {
+  background-color: #6B7D7D;
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.nofavs {
+  display: flex;
+  align-items: center;
+}
+
+
+footer {
+  bottom: 0;
+  background-color:	#6B7D7D;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+footer > p {
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  filter: brightness(0);
+} 
+
+@media only screen and (max-width: 600px) {
+  
+  .card-container > h2 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-info-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+  }
+}
+
+
+.dark {
+  background-color: #0d0912;
   color: white;
 }
-.dark > a {
+
+.dark a{
   color: white;
+}
+
+a:hover{
+  color: rgb(136, 136, 136);
+}
+
+.dark nav {
+  background-color: #3E4C59;
+}
+
+.dark .btn-theme {
+  background-color: #3E4C59;
+}
+
+
+.dark .back-btn > button {
+  background-color: #3E4C59;
+  color: white
+}
+
+
+.dark form > input {
+  background-color: #0d0912;
+  color: white;
+  border: 1px solid #3E4C59
+}
+
+.dark form > input::placeholder {
+  color: rgb(194, 194, 194);
+}
+
+.dark form > button {
+  background-color: #3E4C59;
+  color: white
+}
+
+
+.dark .card {
+  background-color: #525252;
+  border: none;
+}
+
+.dark .card:hover{
+  border: 0.5px solid #A3D2CA;
+  transition: 0.3s;
+}
+
+.dark .removeAll-btn {
+  background-color: #3E4C59;
+  color: white;
+}
+
+
+.dark footer {
+  background-color: #3E4C59;
 }
